@@ -1,6 +1,5 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
+import express from "express";
+import dotenv from "dotenv";
 
 const app = express();
 app.use(express.json());
@@ -8,17 +7,7 @@ app.use(express.json());
 dotenv.config();
 
 // Routes
-const userRoute = require("./routes/users");
-
-mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("MongoDB connected!");
-  })
-  .catch((err) => console.log(`MongoDB Error:`, err));
+import userRoute from "./routes/users.js";
 
 // Use Routes
 app.use("/api/users", userRoute);
