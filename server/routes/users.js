@@ -1,10 +1,11 @@
-const router = require("express").Router();
+import express from "express";
 
-// Models
-const User = require("../models/User.js");
+// Controller
+import { getUsers } from "../controllers/users.js";
 
-router.post("/user", async (req, res) => {
-  try {
-    console.log(req);
-  } catch (error) {}
-});
+const router = express.Router();
+
+// Get Users
+router.get("/user", getUsers);
+
+export default router;
