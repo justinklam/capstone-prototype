@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 
 // Components
 import Navbar from "./components/Navbar";
+import AvatarPlayground from "./components/AvatarPlayground";
 
 const Layout = () => {
   return (
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/avatar",
+        element: <AvatarPlayground />,
       },
     ],
   },
